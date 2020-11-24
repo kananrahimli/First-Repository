@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .container{
+        text-align: center;
+        padding-top: 300px;
+    }
+    .btn{
+       padding: 10px 20px;
+       background-color: transparent;
+       border: 1px solid #3498db;
+       margin-right: 7px;
+       transition: 0.5s;
+       cursor: pointer;
+       position: relative;
+       overflow: hidden;
+       font-size: 20px;
+    }
+    .btn:focus{outline: none;}
+    .btn1,.btn2{
+        color: #3498db;
+    }
+    .btn1:hover,.btn2:hover{
+        color: #fff;
+    }
+
+    .btn3,.btn4{
+        color: #fff;
+    }
+    .btn3:hover,.btn4:hover{
+        color: #3498db;
+    }
+    .btn::before{
+        content: " ";
+        position: absolute;
+        background-color: #3498db;
+        left: 0;
+        height: 0;
+        width: 100%;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .btn1::before,.btn3::before{
+        top: 0;
+        border-radius: 0% 0% 50% 50%;
+    }
+    .btn2::before,.btn4::before{
+        bottom: 0;
+        border-radius: 50% 50% 0% 0%;
+    }
+    .btn3::before,.btn4::before{
+        height: 180%;
+    }
+    .btn1:hover::before,.btn2:hover::before{
+        height: 180%;
+    }
+    .btn3:hover::before,.btn4:hover::before{
+        height: 0;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <button class="btn btn1">Hover Me</button>
+        <button class="btn btn2">Hover Me</button>
+        <button class="btn btn3">Hover Me</button>
+        <button class="btn btn4">Hover Me</button>
+    </div>
+</body>
+</html>
